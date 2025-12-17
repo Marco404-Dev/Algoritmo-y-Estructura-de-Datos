@@ -17,7 +17,3 @@ entonces funciona para cualquier tamaño de entrada.
 La eficiencia de un algoritmo se mide por el número de operaciones
 en función del tamaño de entrada n, usando notación asintótica.
 
-
-
-## problema
-Incluye solución naive (O(n²)) y optimizada (O(n)) para comparar estructuras de datos.
