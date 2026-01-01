@@ -34,3 +34,36 @@ Este análisis se expresa mediante **notación asintótica**, como **O**, **Ω**
 Indica que el número de operaciones crece de forma **lineal** con el tamaño de la entrada `n`.
 
 - Si `n` se duplica, el tiempo de ejecución **aproximadamente se duplica**.
+
+
+
+
+# ¿Cuál es la diferencia entre O(n), Ω(n) y Θ(n)?
+
+## 1️⃣ El símbolo (O, Ω, Θ)
+
+- **O →** cota superior → indica el **peor caso** del algoritmo.  
+- **Ω →** cota inferior → indica el **mejor caso** del algoritmo.  
+- **Θ →** cota ajustada → indica el **crecimiento real/promedio**, cuando mejor y peor caso coinciden.
+
+---
+
+## 2️⃣ Lo que está dentro del paréntesis
+
+Es una **función** (n, n², log n…) que describe **cómo crece el tiempo o espacio** según el tamaño de la entrada \(n\).
+
+**Ejemplos:**
+
+- `O(n)` → “en el peor caso, el tiempo crece linealmente con n”  
+- `Ω(1)` → “en el mejor caso, tarda al menos constante, sin importar n”  
+- `Θ(n)` → “tiempo promedio crece linealmente con n”
+
+---
+
+## 3️⃣ Resumen rápido
+
+| Notación | Qué significa     | Ejemplo con búsqueda lineal |
+|----------|-----------------|----------------------------|
+| O(n)     | Peor caso        | Elemento no está en la lista → revisa todos los elementos |
+| Ω(1)     | Mejor caso       | Elemento está al inicio → revisa 1 elemento |
+| Θ(n)     | Crecimiento exacto | Promedio o cuando mejor y peor caso son similares |
