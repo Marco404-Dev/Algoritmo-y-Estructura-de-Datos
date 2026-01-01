@@ -67,3 +67,9 @@ Es una **función** (n, n², log n…) que describe **cómo crece el tiempo o es
 | O(n)     | Peor caso        | Elemento no está en la lista → revisa todos los elementos |
 | Ω(1)     | Mejor caso       | Elemento está al inicio → revisa 1 elemento |
 | Θ(n)     | Crecimiento exacto | Promedio o cuando mejor y peor caso son similares |
+
+![ej1](../../imagenes/ejm1-notacion.png)
+
+![ej2](../../imagenes/ejm2-notacion.png)
+
+![ej3](../../imagenes/ejm3-notacion.png)
