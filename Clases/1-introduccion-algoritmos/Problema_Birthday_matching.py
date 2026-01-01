@@ -1,3 +1,6 @@
+## Se tiene la función birthday_match que recibe una lista de estudiantes representados como tuplas (nombre, cumpleaños)
+## y busca un par de estudiantes que compartan la misma fecha de cumpleaños.
+
 def birthday_match(students):
     '''
     Find a pair of students with the same birthday
