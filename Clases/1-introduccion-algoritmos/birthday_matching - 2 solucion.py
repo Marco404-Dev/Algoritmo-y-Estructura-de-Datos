@@ -1,26 +1,20 @@
-def birthday_match(students):
-    n = len(students)
-    record = [None] * n
+## Usando diccionario (la más eficiente)
 
-    for k in range(n):
-        name1, bday1 = students[k]
-
-        for i in range(k):
-            name2, bday2 = record[i]
-            if bday1 == bday2:
-                return (name1, name2)
-
-        record[k] = (name1, bday1)
-
+def coincidencia_cumpleanos_dic(estudiantes):
+    """
+    Busca un par de estudiantes que compartan cumpleaños usando diccionario.
+    Entrada: lista de tuplas (nombre, cumpleaños)
+    Salida: tupla con los nombres o None
+    """
+    vistos = {}  # diccionario para cumpleaños ya vistos
+    
+    for nombre, cumple in estudiantes:
+        if cumple in vistos:
+            return (nombre, vistos[cumple])
+        vistos[cumple] = nombre
+    
     return None
 
+## Tiempo: O(n)
 
-# estudiantes
-students = [
-    ("Ana", (3, 10)),
-    ("Luis", (7, 22)),
-    ("Maria", (3, 10)),
-]
-# print
-print(birthday_match(students))   
-
+## Espacio: O(n)
