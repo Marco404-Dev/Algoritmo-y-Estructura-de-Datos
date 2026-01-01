@@ -1,3 +1,5 @@
+## Usando Listas o Arrays
+
 def coincidencia_cumpleanos(estudiantes):
     """
     Busca un par de estudiantes que compartan la misma fecha de cumpleaños.
@@ -36,4 +38,10 @@ if resultado:
     print(f"Coincidencia encontrada: {resultado[0]} y {resultado[1]}")
 else:
     print("No hay coincidencias de cumpleaños")
+
+##
+
+## Tiempo: O(n²)
+
+## Espacio: O(n)
 
