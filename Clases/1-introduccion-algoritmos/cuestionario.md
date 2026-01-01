@@ -87,3 +87,8 @@ Es una **función** (n, n², log n…) que describe **cómo crece el tiempo o es
    - `for` sobre toda la lista → **lineal**  
    - `for` dentro de otro `for` → **cuadrático**  
    - Dividir en mitades → **logarítmico**
+
+
+## Explicacion la notacion sintotica del problema Birthday_Matching
+
+![explicacion](../../imagenes/explicacionEJM1.png)
