@@ -73,3 +73,17 @@ Es una **función** (n, n², log n…) que describe **cómo crece el tiempo o es
 ![ej2](../../imagenes/ejm2-notacion.png)
 
 ![ej3](../../imagenes/ejm3-notacion.png)
+
+
+
+## 🔹 2. Cómo saber qué función poner
+
+1. **Analiza cuántas operaciones hace el algoritmo según n**  
+   - `for i in lista:` → puede hacer hasta **n** pasos → `O(n)` en el **peor caso**.  
+   - Si solo hace 1 paso en algún escenario → `Ω(1)` en el **mejor caso**.  
+   - Si normalmente hace un número intermedio → `Θ(n)` o lo que corresponda.
+
+2. **Considera el tipo de bucles o divisiones**  
+   - `for` sobre toda la lista → **lineal**  
+   - `for` dentro de otro `for` → **cuadrático**  
+   - Dividir en mitades → **logarítmico**
