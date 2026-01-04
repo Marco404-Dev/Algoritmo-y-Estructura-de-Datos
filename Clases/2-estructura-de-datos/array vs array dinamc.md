@@ -76,7 +76,85 @@ Por eso insertar al final es **Θ(1) amortizado**.
 
 ---
 
-## 🏁 Conclusión
+# ⚖️ Trade-offs en Estructuras de Datos
 
-Ambos implementan la interfaz `Sequence`,  
-pero están optimizados para **situaciones distintas**.
+## ¿Qué es un trade-off?
+Un **trade-off** es un compromiso:  
+mejorar una cosa implica **empeorar otra**.
+
+En estructuras de datos:
+> **No se puede optimizar todas las operaciones al mismo tiempo.**
+
+---
+
+## 🧠 Idea clave
+Elegir una estructura de datos es decidir:
+- qué operaciones quiero que sean **rápidas**
+- y cuáles acepto que sean **lentas**
+
+---
+
+## 🔁 Ejemplo clásico: Array vs Linked List
+
+### Array
+**Ventaja**
+- Acceso por índice muy rápido → Θ(1)
+
+**Desventaja**
+- Insertar o borrar elementos es lento → O(n)
+
+👉 Trade-off:  
+Acceso rápido **a cambio** de inserciones lentas.
+
+---
+
+### Linked List
+**Ventaja**
+- Insertar o borrar al inicio es rápido → Θ(1)
+
+**Desventaja**
+- Acceder al elemento i-ésimo es lento → O(n)
+
+👉 Trade-off:  
+Inserciones rápidas **a cambio** de acceso lento.
+
+---
+
+## ⚖️ Otro ejemplo: Array vs Dynamic Array
+
+### Array
+- Menos uso de memoria
+- Tamaño fijo
+- Inserciones costosas
+
+### Dynamic Array
+- Usa memoria extra
+- Inserciones al final rápidas (Θ(1) amortizado)
+
+👉 Trade-off:  
+Más memoria **a cambio** de inserciones eficientes.
+
+---
+
+## 🧪 Ejemplo cotidiano
+Una mochila:
+- pequeña → cómoda (menos peso), pero no entra todo
+- grande → entra todo, pero pesa más
+
+No hay una “mejor”, depende del uso.
+
+---
+
+## 📌 Por qué los trade-offs importan
+Porque:
+- definen la **eficiencia del algoritmo**
+- justifican la **elección de estructura**
+- aparecen mucho en **exámenes**
+
+---
+
+## 🏁 Conclusión
+- No existe la estructura perfecta
+- Toda estructura optimiza algo y sacrifica otra cosa
+- Entender los trade-offs es clave para diseñar buenos algoritmos
+
