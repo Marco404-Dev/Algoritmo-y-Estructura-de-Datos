@@ -21,7 +21,7 @@ Una misma interfaz puede ser implementada por distintas estructuras de datos, ca
 
 ## 3. Interfaces principales del curso
 
-En el curso MIT 6.006 se trabajan principalmente **dos interfaces**: `Sequence` y `Set`.
+Se trabajan principalmente **dos interfaces**: `Sequence` y `Set`.
 
 ---
 
@@ -158,6 +158,7 @@ Por eso:
 - El análisis amortizado explica por qué algunas estructuras son eficientes en promedio
 
 ---
+
 
 
 
