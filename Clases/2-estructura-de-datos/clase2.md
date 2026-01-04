@@ -1,4 +1,4 @@
-# 📘 Clase 2 – Estructuras de Datos (MIT 6.006)
+# 📘 Clase 2 – Estructuras de Datos 
 
 ## 1. ¿Qué es una estructura de datos?
 
@@ -158,5 +158,6 @@ Por eso:
 - El análisis amortizado explica por qué algunas estructuras son eficientes en promedio
 
 ---
+
 
 
