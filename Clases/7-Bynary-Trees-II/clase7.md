@@ -29,10 +29,10 @@ Idea fácil:
 Cuando se inclina mucho, el AVL hace que el “nodo del medio” suba.
 
 
-### 4) Casos de rotación (con ejemplos claros)
+## 4) Casos de rotación (con ejemplos claros)
 ------------------------------------------
 
-## 4.1) Caso RR -> 1 rotación a la izquierda
+#### 4.1) Caso RR -> 1 rotación a la izquierda
 Insertar: 1, 2, 3
 
 Antes (se inclina a la derecha):
@@ -170,5 +170,6 @@ Porque mantiene el árbol “cortito”, entonces:
 - insertar
 - eliminar
 se hacen en pocos pasos: O(log n)
+
 
 
