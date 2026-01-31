@@ -6,7 +6,7 @@ Cada nodo puede tener **máximo 2 hijos**:
 - hijo izquierdo (left)
 - hijo derecho (right)
 
-Ejemplo:
+```textEjemplo:
 
 
       A
@@ -14,7 +14,7 @@ Ejemplo:
     B   C
    /
   D
-
+```
 ---
 
 ## 2) Partes básicas (nombres que siempre salen)
@@ -98,5 +98,6 @@ Con este árbol:
   1   6
 
 Pregunta: ¿Cuál es el recorrido **in-order** (izq → yo → der)?
+
 
 
