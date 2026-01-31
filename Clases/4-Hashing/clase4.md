@@ -1,6 +1,6 @@
 # Clase 4: Hashing (Introducción a Algoritmos – MIT 6.006)
 
-## 1. Repaso de estructuras de datos
+#### Repaso de estructuras de datos
 Se comparan distintas estructuras según sus operaciones:
 
 - **Array**: acceso directo, pero sin orden ni operaciones dinámicas eficientes.
@@ -8,101 +8,113 @@ Se comparan distintas estructuras según sus operaciones:
 - **Idea central**: queremos búsquedas **más rápidas que Θ(log n)** manteniendo operaciones dinámicas.
 
 ---
+# Hashing (Tabla Hash) — Explicación sencilla
 
-## 2. Modelo de comparación y límite inferior
-En el **modelo de comparación**, los algoritmos:
-- Solo pueden comparar elementos (>, <, =).
-- Se representan como **árboles de decisión**.
+## 1) ¿Qué es hashing?
+**Hashing** es una técnica para **guardar y buscar datos rápido**.
 
-### Límite inferior
-- Buscar en un conjunto de n elementos requiere al menos:
-  - **Ω(log n)** comparaciones en el peor caso.
-- Los arrays ordenados alcanzan este límite → **óptimos en este modelo**.
-- Para ir más rápido, se necesita **más que comparaciones**.
+La idea es transformar una **clave (key)** en un **índice (posición)** dentro de un arreglo llamado **tabla hash**.
 
----
-
-## 3. Direct Access Array
-### Idea
-- Usar claves enteras únicas como índices de un array.
-- Acceso, inserción y borrado en **O(1)** en el peor caso.
-
-### Problema
-- Requiere espacio **O(u)** donde u es el universo de claves.
-- Impracticable si `u ≫ n` (ej: nombres, strings largos).
+- **Clave (key):** lo que identifica un dato (ej: 42, DNI, “Ana”).
+- **Tabla hash:** arreglo con casillas/cajones (ej: 0..9).
+- **Función hash:** regla que convierte la clave en un índice.
 
 ---
 
-## 4. Hashing
-### Motivación
-Reducir espacio usando un array más pequeño.
+## 2) Función hash (regla)
+Una función hash responde:
+> “¿En qué cajón guardo/busco esta clave?”
 
-### Definición
-- **Función hash**:  
-  `h(k): {0, …, u-1} → {0, …, m-1}`, con `m = Θ(n)`
-- La estructura se llama **tabla hash**.
-
-### Colisiones
-- Son inevitables (principio del palomar).
-- Dos enfoques principales:
-  - **Open addressing**
-  - **Chaining (encadenamiento)** ← foco de la clase
+Ejemplo simple:
+- Tabla con 10 cajones: `0..9`
+- Regla: **quedarse con el último dígito**
+  - `h(k) = k mod 10`
 
 ---
 
-## 5. Chaining (encadenamiento)
-- Cada posición de la tabla almacena una lista (cadena).
-- Si los elementos se distribuyen bien:
-  - Tamaño esperado de cada cadena: **O(1)**.
-  - Todas las operaciones cuestan **O(1)** en promedio.
-- Si la función hash es mala:
-  - Todas las claves pueden caer en la misma posición → **Θ(n)**.
+## 3) Ejemplo de guardar
+Claves: `27, 18, 39, 41`
+
+- `h(27) = 7` → cajón 7
+- `h(18) = 8` → cajón 8
+- `h(39) = 9` → cajón 9
+- `h(41) = 1` → cajón 1
+
+Quedaría:
+
+- `1: [41]`
+- `7: [27]`
+- `8: [18]`
+- `9: [39]`
 
 ---
 
-## 6. Funciones hash
+## 4) Buscar un elemento
+Para buscar `39`:
 
-### División (heurística)
+1. Calculas `h(39) = 9`
+2. Vas directo al cajón 9
+3. Ahí lo encuentras
 
-**Definición:**  
-h(k) = k mod m
-
-**Características:**
-- Es simple y rápida.
-- Puede fallar si las claves tienen patrones.
-- El valor de `m` suele elegirse primo y lejos de potencias de 2 o 10.
-- Se usa en la práctica (por ejemplo, Python), pero con mezclas adicionales para mejorar la distribución.
+✅ En vez de revisar todos los datos, vas **directo** a la posición.
 
 ---
 
-## 7. Hashing universal (teórico)
+## 5) Colisiones (choques)
+Una **colisión** ocurre cuando **dos claves caen en el mismo cajón**.
 
-### Idea
-- Elegir la función hash **aleatoriamente** desde una familia de funciones.
-- Evita que un conjunto adverso de claves provoque muchas colisiones.
+Ejemplo:
+- `h(52) = 2`
+- `h(42) = 2`
 
-### Función hash
-h_ab(k) = ((a · k + b) mod p) mod m  
+Ambos van al cajón 2 → **colisión**.
 
-Donde:
-- `p` es un número primo mayor que el universo de claves `u`
-- `a ≠ 0` y `b` se eligen aleatoriamente
-
-### Propiedad clave (universalidad)
-Para dos claves distintas `ki ≠ kj`:
-- Pr[h(ki) = h(kj)] ≤ 1 / m
-
-### Consecuencia
-- El tamaño esperado de una cadena es:
-  - E[X] ≤ 1 + (n − 1) / m
-- Si `m = Θ(n)`, entonces el tiempo esperado es **O(1)**.
+Importante:
+- `42` no solo choca con `52`, choca con **cualquier número que termine en 2**, porque todos van al cajón 2.
 
 ---
 
-## 8. Factor de carga
+## 6) Solución común: Chaining (lista por cajón)
+La solución más simple es:
+> Cada cajón guarda una **lista**.
 
-- Se define como: α = n / m
-- Mantener α constante garantiza buen rendimiento.
-- Si α se aleja mucho de 1:
-  - Se reconstruye la tabla con un nuevo tamaño y una nueva función hash.
-- El costo se analiza de forma amortizada (similar a arrays dinámicos).
+Entonces, si hay colisión, se guardan juntos:
+
+- `cajón 2: [52, 42]`
+
+---
+
+## 7) Operaciones típicas (con chaining)
+### Insertar (insert)
+- Calculas `h(k)`
+- Agregas `k` a la lista del cajón
+
+### Buscar (find/search)
+- Calculas `h(k)`
+- Vas al cajón
+- Buscas dentro de la lista
+
+### Eliminar (delete)
+- Calculas `h(k)`
+- Vas al cajón
+- Eliminas `k` de la lista
+
+---
+
+## 8) ¿Para qué sirve hashing?
+✅ **Para mejorar la velocidad de búsqueda**, porque normalmente:
+- No buscas en toda la lista
+- Vas directo a un cajón (y revisas una lista pequeña si hubo colisión)
+
+---
+
+## Mini-ejemplo (como el que resolvimos)
+Tabla tamaño 10, regla `h(k)=k mod 10`:
+
+- `52 → 2`
+- `42 → 2`
+
+Hay colisión → se guarda en lista:
+
+- `2: [52, 42]`
+
