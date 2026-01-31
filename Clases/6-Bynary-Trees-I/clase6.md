@@ -99,3 +99,4 @@ Con este árbol:
 
 Pregunta: ¿Cuál es el recorrido **in-order** (izq → yo → der)?
 
+
