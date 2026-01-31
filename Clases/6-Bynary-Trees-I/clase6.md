@@ -39,12 +39,13 @@ Regla:
 3) Visita subárbol derecho
 
 Ejemplo:
-
+```text
       A
      / \
     B   C
    /
   D
+```
 
 In-order:
 - izquierda de A: (B)
@@ -72,6 +73,7 @@ Resultado: **D, B, A, C**
 - Si el árbol está “torcido” como lista, se vuelve lento.
 
 Ejemplo malo (muy alto):
+```text
 A
  \
   B
@@ -79,26 +81,32 @@ A
     C
      \
       D
+```
 
 Ejemplo bueno (balanceado):
+```text
    B
   / \
  A   D
     /
    C
 
+```
 ---
 
 ## 6) Mini práctica (para comprobar)
 Con este árbol:
-
+```text
       8
      / \
     3   10
    / \
   1   6
 
+```
+
 Pregunta: ¿Cuál es el recorrido **in-order** (izq → yo → der)?
+
 
 
 
