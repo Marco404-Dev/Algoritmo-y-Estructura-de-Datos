@@ -90,12 +90,13 @@ Entonces:
 
 ## Dibujito del árbol (mapeado)
 
+```text
               Q[0]=60
             /         \
       Q[1]=30        Q[2]=50
       /    \          /
 Q[3]=10  Q[4]=20   Q[5]=40
-
+```
 
 ---
 
@@ -164,4 +165,5 @@ Q = [50, 30, 40, 10, 20]
 - Heap = array donde **el mayor siempre está en Q[0]**
 - Insertar = poner al final y **subir**
 - Delete_max = swap con último, borrar, y **bajar**
+
 
