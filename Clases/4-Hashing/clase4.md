@@ -8,7 +8,7 @@ Se comparan distintas estructuras según sus operaciones:
 - **Idea central**: queremos búsquedas **más rápidas que Θ(log n)** manteniendo operaciones dinámicas.
 
 ---
-# Hashing (Tabla Hash) — Explicación sencilla
+# Hashing (Tabla Hash)
 
 ## 1) ¿Qué es hashing?
 **Hashing** es una técnica para **guardar y buscar datos rápido**.
@@ -117,4 +117,5 @@ Tabla tamaño 10, regla `h(k)=k mod 10`:
 Hay colisión → se guarda en lista:
 
 - `2: [52, 42]`
+
 
