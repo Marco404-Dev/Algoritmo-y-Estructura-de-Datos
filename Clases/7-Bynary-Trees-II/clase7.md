@@ -1,7 +1,7 @@
 AVL (Binary Trees II) — explicación sencilla + rotaciones (con ejemplos)
 =====================================================================
 
-1) ¿Qué es un AVL?
+# 1) ¿Qué es un AVL?
 ---------------
 Un AVL es un árbol binario de búsqueda (BST) que se auto-arregla para NO quedar como una lista.
 
@@ -9,7 +9,7 @@ Un AVL es un árbol binario de búsqueda (BST) que se auto-arregla para NO queda
 - AVL evita eso manteniendo el árbol balanceado.
 
 
-2) ¿Qué significa “balanceado”?
+# 2) ¿Qué significa “balanceado”?
 ------------------------------
 En cada nodo comparas la altura del lado izquierdo y del lado derecho.
 
@@ -21,7 +21,7 @@ Regla AVL:
 - diferencia = -2 -> MAL (hay que arreglar)
 
 
-3) ¿Cómo lo arregla? (rotaciones)
+# 3) ¿Cómo lo arregla? (rotaciones)
 ---------------------------------
 Rotación = mover 2 o 3 nodos para “enderezar” el árbol, sin perder el orden del BST.
 
@@ -29,13 +29,14 @@ Idea fácil:
 Cuando se inclina mucho, el AVL hace que el “nodo del medio” suba.
 
 
-4) Casos de rotación (con ejemplos claros)
+# 4) Casos de rotación (con ejemplos claros)
 ------------------------------------------
 
-4.1) Caso RR -> 1 rotación a la izquierda
+## 4.1) Caso RR -> 1 rotación a la izquierda
 Insertar: 1, 2, 3
 
 Antes (se inclina a la derecha):
+
 1
  \
   2
@@ -169,3 +170,4 @@ Porque mantiene el árbol “cortito”, entonces:
 - insertar
 - eliminar
 se hacen en pocos pasos: O(log n)
+
