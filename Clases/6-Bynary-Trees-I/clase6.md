@@ -8,6 +8,7 @@ Cada nodo puede tener **máximo 2 hijos**:
 
 Ejemplo:
 
+
       A
      / \
     B   C
@@ -97,3 +98,4 @@ Con este árbol:
   1   6
 
 Pregunta: ¿Cuál es el recorrido **in-order** (izq → yo → der)?
+
