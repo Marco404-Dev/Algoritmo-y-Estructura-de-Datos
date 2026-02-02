@@ -253,7 +253,81 @@ fib_tab(n):
 
   return F[n]
 ```
+```text
+https://colab.research.google.com/drive/1mEUS4CcBYsAmitBMJHj33GwFfsrq9u7L#scrollTo=zMRMW894kkH2
+```
 
+# Fibonacci: 3 formas de resolver (NO DP vs DP)
+
+Aunque las 3 se “llaman como función” (ej. `fib(x)`), **no hacen lo mismo por dentro**.  
+La diferencia real es: **si repiten subproblemas o no**.
+
+---
+
+## 1) Recursión ingenua (NO DP) ❌
+### Cómo funciona
+- La función se llama a sí misma **dos veces** por cada `n`:
+  - `fib(n-1)` y `fib(n-2)`
+- Eso hace que se repitan subproblemas muchas veces.
+
+### Consecuencia
+- Recalcula `fib(k)` una y otra vez.
+- Se vuelve muy lento cuando `n` crece.
+
+### Complejidad
+- **Tiempo:** `O(2^n)` (exponencial)
+- **Memoria (pila de recursión):** `O(n)`
+
+---
+
+## 2) DP Top-Down (Memoization) ✅ (recursión + guardar)
+### Cómo funciona
+- También es recursivo.
+- Antes de calcular, revisa:
+  - “¿ya calculé `fib(n)`?”
+- Si ya está en `memo`, lo devuelve sin recalcular.
+
+### Consecuencia
+- Cada `fib(k)` se calcula **una sola vez**.
+- Mucho más rápido.
+
+### Complejidad
+- **Tiempo:** `O(n)`
+- **Memoria:** `O(n)` por `memo` + `O(n)` por la pila de recursión
+
+---
+
+## 3) DP Bottom-Up (Tabulation) ✅ (tabla + bucle)
+### Cómo funciona
+- No usa recursión.
+- Calcula en orden:
+  - `F[0], F[1], F[2], ... , F[n]`
+- Cada `F[i]` se calcula **una sola vez** en un `for`.
+
+### Consecuencia
+- Rápido y estable (no hay límite de recursión).
+- Ideal para `n` grande.
+
+### Complejidad
+- **Tiempo:** `O(n)`
+- **Memoria:** `O(n)` si guardas la lista `F`  
+  (se puede reducir a `O(1)` usando solo 2 variables)
+
+---
+
+## Comparación directa (para examen)
+
+| Método | ¿Recursivo? | ¿Guarda resultados? | ¿Repite subproblemas? | Tiempo |
+|-------|-------------|---------------------|------------------------|--------|
+| Ingenuo | Sí | No | Sí (mucho) | `O(2^n)` |
+| Top-Down | Sí | Sí (`memo`) | No | `O(n)` |
+| Bottom-Up | No | Sí (tabla `F`) | No | `O(n)` |
+
+---
+
+## Idea clave
+✅ **DP = no repetir subproblemas** (porque guardas resultados o llenas una tabla).  
+Recursión es solo una forma de programar, DP es el método.
 
 
 
