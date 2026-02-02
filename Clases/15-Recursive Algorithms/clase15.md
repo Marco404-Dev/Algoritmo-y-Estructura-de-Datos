@@ -205,3 +205,51 @@ Ambos “dividen en subproblemas”, pero:
 - **Divide & Conquer:** subproblemas casi no se repiten (ej: **merge sort**).
 - **DP:** subproblemas **se repiten** (ej: Fibonacci ingenuo) y por eso **guardas** resultados.
 
+
+
+
+========================================
+CASO 1) RECURSIÓN INGENUA (NO DP) ❌
+========================================
+fib(n):
+  si n <= 1:
+    return n
+  return fib(n-1) + fib(n-2)
+
+
+========================================
+CASO 2) DP TOP-DOWN (MEMOIZATION) ✅
+(recursión + guardar resultados)
+========================================
+memo = arreglo de tamaño n+1 (inicializado con "vacío")
+
+fib_memo(n):
+  si n <= 1:
+    return n
+
+  si memo[n] no es vacío:
+    return memo[n]
+
+  memo[n] = fib_memo(n-1) + fib_memo(n-2)
+  return memo[n]
+
+
+========================================
+CASO 3) DP BOTTOM-UP (TABULATION) ✅
+(bucle + tabla, sin recursión)
+========================================
+fib_tab(n):
+  si n <= 1:
+    return n
+
+  F[0] = 0
+  F[1] = 1
+
+  para i = 2 hasta n:
+    F[i] = F[i-1] + F[i-2]
+
+  return F[n]
+
+
+
+
