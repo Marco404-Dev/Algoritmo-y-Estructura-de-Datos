@@ -67,23 +67,9 @@ A) Top-Down (Memoization)
 - Si memo[n] ya está, lo devuelves.
 - Si no, lo calculas, guardas y devuelves.
 
-Pseudocódigo Top-Down (memoization) — Fibonacci:
-fib(n):
-  si n <= 1: return n
-  si memo[n] existe: return memo[n]
-  memo[n] = fib(n-1) + fib(n-2)
-  return memo[n]
-
 B) Bottom-Up (Tabulation)
 - No recursión.
 - Calculas desde los casos base hacia arriba.
-
-Pseudocódigo Bottom-Up (tabulation) — Fibonacci:
-F[0] = 0
-F[1] = 1
-para i = 2..n:
-  F[i] = F[i-1] + F[i-2]
-return F[n]
 
 ---
 
@@ -121,30 +107,6 @@ Entonces:
 
 ---
 
-## 10) Mini-ejemplo tipo Bowling (DP en arreglo)
-Problema: máximo puntaje sin usar elementos adyacentes.
-
-Valores: v = [2, 7, 9, 3]
-
-Defino:
-M(i) = máximo desde i hasta el final
-
-Decisiones:
-- no tomar i => M(i+1)
-- tomar i => v[i] + M(i+2)
-
-Transición:
-M(i) = max( M(i+1), v[i] + M(i+2) )
-
-Bases:
-M(n) = 0
-M(n+1) = 0
-
-Respuesta:
-M(0)
-
----
-
 ## 11) Resumen en 3 líneas
 - Recursión: problema grande => subproblemas + caso base
 - DP: cuando subproblemas se repiten, guardas resultados
@@ -152,17 +114,7 @@ M(0)
 
 
 
-
-
-
-
-
-
-
-
-
-
-# Recursión vs Programación Dinámica (DP) — Resumen claro
+# Recursión vs Programación Dinámica (DP) 
 
 ## 1) Recursión vs DP: no son lo mismo
 - **Recursión** = cómo escribes el código: una función se llama a sí misma.
@@ -175,84 +127,12 @@ Por eso:
 
 ---
 
-## 2) “Dividir en subproblemas” no es exclusivo de recursión
-✅ Los tres enfoques (ingenuo, memo, bottom-up) usan la misma idea matemática:
-**F(n) depende de F(n−1) y F(n−2).**
-
-La diferencia **no** es “uno divide y el otro no”. La diferencia es:
-
 - **Ingenuo:** divide, pero **repite** subproblemas.
 - **Memo (recursivo):** divide y **guarda** para no repetir.
 - **Bottom-up (iterativo):** también usa subproblemas, pero en vez de llamar funciones, **los calcula en orden** con un bucle.
 
----
-
-## 3) ¿Qué significa “uno es recursivo y el otro no”?
-- **Recursivo (top-down):** llegas a F(n) “preguntando” por F(n−1) y F(n−2) con llamadas.
-- **No recursivo (bottom-up):** llegas a F(n) “construyendo” desde F(0) y F(1) hasta F(n) con un bucle.
-
-Ambos llegan a lo mismo. Solo cambia el **camino de ejecución**.
-
-### Analogía rápida
-- **Top-down:** “Quiero la respuesta final, voy preguntando lo que me falta”.
-- **Bottom-up:** “Primero construyo todas las respuestas pequeñas y luego tomo la final”.
-
----
-
-## 4) Divide & Conquer vs DP (para no confundir)
-Ambos “dividen en subproblemas”, pero:
-
-- **Divide & Conquer:** subproblemas casi no se repiten (ej: **merge sort**).
-- **DP:** subproblemas **se repiten** (ej: Fibonacci ingenuo) y por eso **guardas** resultados.
 
 
-
-
-========================================
-CASO 1) RECURSIÓN INGENUA (NO DP) ❌
-========================================
-```text
-fib(n):
-  si n <= 1:
-    return n
-  return fib(n-1) + fib(n-2)
-```
-
-========================================
-CASO 2) DP TOP-DOWN (MEMOIZATION) ✅
-(recursión + guardar resultados)
-========================================
-```text
-memo = arreglo de tamaño n+1 (inicializado con "vacío")
-
-fib_memo(n):
-  si n <= 1:
-    return n
-
-  si memo[n] no es vacío:
-    return memo[n]
-
-  memo[n] = fib_memo(n-1) + fib_memo(n-2)
-  return memo[n]
-```
-
-========================================
-CASO 3) DP BOTTOM-UP (TABULATION) ✅
-(bucle + tabla, sin recursión)
-========================================
-```text
-fib_tab(n):
-  si n <= 1:
-    return n
-
-  F[0] = 0
-  F[1] = 1
-
-  para i = 2 hasta n:
-    F[i] = F[i-1] + F[i-2]
-
-  return F[n]
-```
 ```text
 https://colab.research.google.com/drive/1mEUS4CcBYsAmitBMJHj33GwFfsrq9u7L#scrollTo=zMRMW894kkH2
 ```
@@ -328,6 +208,7 @@ La diferencia real es: **si repiten subproblemas o no**.
 ## Idea clave
 ✅ **DP = no repetir subproblemas** (porque guardas resultados o llenas una tabla).  
 Recursión es solo una forma de programar, DP es el método.
+
 
 
 
