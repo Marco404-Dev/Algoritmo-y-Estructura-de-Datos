@@ -149,3 +149,59 @@ M(0)
 - Recursión: problema grande => subproblemas + caso base
 - DP: cuando subproblemas se repiten, guardas resultados
 - Orden topológico: orden correcto para resolver sin depender del “futuro”
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Recursión vs Programación Dinámica (DP) — Resumen claro
+
+## 1) Recursión vs DP: no son lo mismo
+- **Recursión** = cómo escribes el código: una función se llama a sí misma.
+- **DP (Programación Dinámica)** = cómo diseñas la solución: subproblemas + guardar resultados para no repetir.
+
+Por eso:
+- Puedes tener **recursión sin DP** (Fibonacci ingenuo).
+- Puedes tener **DP con recursión** (memoization / top-down).
+- Puedes tener **DP sin recursión** (tabulation / bottom-up).
+
+---
+
+## 2) “Dividir en subproblemas” no es exclusivo de recursión
+✅ Los tres enfoques (ingenuo, memo, bottom-up) usan la misma idea matemática:
+**F(n) depende de F(n−1) y F(n−2).**
+
+La diferencia **no** es “uno divide y el otro no”. La diferencia es:
+
+- **Ingenuo:** divide, pero **repite** subproblemas.
+- **Memo (recursivo):** divide y **guarda** para no repetir.
+- **Bottom-up (iterativo):** también usa subproblemas, pero en vez de llamar funciones, **los calcula en orden** con un bucle.
+
+---
+
+## 3) ¿Qué significa “uno es recursivo y el otro no”?
+- **Recursivo (top-down):** llegas a F(n) “preguntando” por F(n−1) y F(n−2) con llamadas.
+- **No recursivo (bottom-up):** llegas a F(n) “construyendo” desde F(0) y F(1) hasta F(n) con un bucle.
+
+Ambos llegan a lo mismo. Solo cambia el **camino de ejecución**.
+
+### Analogía rápida
+- **Top-down:** “Quiero la respuesta final, voy preguntando lo que me falta”.
+- **Bottom-up:** “Primero construyo todas las respuestas pequeñas y luego tomo la final”.
+
+---
+
+## 4) Divide & Conquer vs DP (para no confundir)
+Ambos “dividen en subproblemas”, pero:
+
+- **Divide & Conquer:** subproblemas casi no se repiten (ej: **merge sort**).
+- **DP:** subproblemas **se repiten** (ej: Fibonacci ingenuo) y por eso **guardas** resultados.
+
