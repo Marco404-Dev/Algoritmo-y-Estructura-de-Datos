@@ -195,22 +195,20 @@ La diferencia real es: **si repiten subproblemas o no**.
 
 ---
 
-## Comparación directa (para examen)
+## Comparación directa 
 
-| Método | ¿Recursivo? | ¿Guarda resultados? | ¿Repite subproblemas? | Tiempo |
-|-------|-------------|---------------------|------------------------|--------|
-| Ingenuo | Sí | No | Sí (mucho) | `O(2^n)` |
-| Top-Down | Sí | Sí (`memo`) | No | `O(n)` |
-| Bottom-Up | No | Sí (tabla `F`) | No | `O(n)` |
+| Método     | ¿Recursivo? | ¿Guarda resultados?         | ¿Repite subproblemas? | Tiempo     | Memoria |
+|-----------|-------------|-----------------------------|------------------------|------------|---------|
+| Ingenuo   | Sí          | No                          | Sí (mucho)             | O(2^n)     | O(n) *(pila)* |
+| Top-Down  | Sí          | Sí (memo: diccionario/array)| No                     | O(n)       | O(n) *(memo + pila)* |
+| Bottom-Up | No          | Sí (tabla F)                | No                     | O(n)       | O(n) *(tabla)* *(o O(1) optimizado)* |
 
----
+### Idea clave
+- **DP = no repetir subproblemas** (porque guardas resultados o llenas una tabla).
+- **Recursión** es una forma de programar; **DP** es el método de solución.
 
-## Idea clave
-  **DP = no repetir subproblemas** (porque guardas resultados o llenas una tabla).  
-Recursión es solo una forma de programar, DP es el método.
-
-  **Recursiva = si se invoca a si mismo dentro de su propia definicion** 
-
+### Definición rápida
+- **Recursiva**: una función es recursiva si **se invoca a sí misma dentro de su propia definición**.
 
 
 
