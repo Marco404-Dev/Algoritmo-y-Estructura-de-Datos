@@ -211,16 +211,18 @@ Ambos “dividen en subproblemas”, pero:
 ========================================
 CASO 1) RECURSIÓN INGENUA (NO DP) ❌
 ========================================
+```text
 fib(n):
   si n <= 1:
     return n
   return fib(n-1) + fib(n-2)
-
+```
 
 ========================================
 CASO 2) DP TOP-DOWN (MEMOIZATION) ✅
 (recursión + guardar resultados)
 ========================================
+```text
 memo = arreglo de tamaño n+1 (inicializado con "vacío")
 
 fib_memo(n):
@@ -232,12 +234,13 @@ fib_memo(n):
 
   memo[n] = fib_memo(n-1) + fib_memo(n-2)
   return memo[n]
-
+```
 
 ========================================
 CASO 3) DP BOTTOM-UP (TABULATION) ✅
 (bucle + tabla, sin recursión)
 ========================================
+```text
 fib_tab(n):
   si n <= 1:
     return n
@@ -249,6 +252,7 @@ fib_tab(n):
     F[i] = F[i-1] + F[i-2]
 
   return F[n]
+```
 
 
 
