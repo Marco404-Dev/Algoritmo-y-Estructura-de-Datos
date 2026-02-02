@@ -208,7 +208,9 @@ La diferencia real es: **si repiten subproblemas o no**.
 ## Idea clave
   **DP = no repetir subproblemas** (porque guardas resultados o llenas una tabla).  
 Recursión es solo una forma de programar, DP es el método.
-  **recursiva = si se invoca a si mismo dentro de su propia definicion** 
+
+  **Recursiva = si se invoca a si mismo dentro de su propia definicion** 
+
 
 
 
