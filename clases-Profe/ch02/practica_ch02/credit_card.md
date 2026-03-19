@@ -132,11 +132,10 @@ Algoritmo charge(precio):
 Idea central:
 
 El método charge consiste en:
-
--revisar cuánto debe ya el cliente
--sumar la nueva compra
--comparar el resultado contra el límite
--aceptar o rechazar la operación
+- revisar cuánto debe ya el cliente
+- sumar la nueva compra
+- comparar el resultado contra el límite
+- aceptar o rechazar la operación
 
 
 #### Método make_payment(monto)
