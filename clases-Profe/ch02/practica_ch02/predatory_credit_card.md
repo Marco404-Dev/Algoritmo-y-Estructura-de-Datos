@@ -149,6 +149,17 @@ Idea central:
 - simular el crecimiento de la deuda con interés compuesto
 
 
+### Explicación de la herencia
+
+La clase PredatoryCreditCard hereda de CreditCard.
+Eso significa que:
+
+- reutiliza los atributos y métodos de la clase base
+- no necesita volver a escribir get_customer, get_bank, get_account, get_limit ni get_balance
+- puede modificar el comportamiento de algunos métodos, como charge
+- puede agregar nuevos métodos, como process_month
+- En otras palabras, esta clase toma el comportamiento de una tarjeta normal y lo extiende con reglas más estrictas.
+
 ### Algoritmo general
 
 1. Crear una tarjeta abusiva con los datos del cliente, banco, cuenta, límite y tasa de interés anual.
