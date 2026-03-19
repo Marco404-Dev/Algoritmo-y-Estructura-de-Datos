@@ -56,7 +56,7 @@ print(lista.index(30))
 print(lista.count(10))
 
 ```
-# Capítulo 2 - `sequence_abc.py`
+# `sequence_abc.py`
 
 ## 1. Planteamiento del problema
 
@@ -170,7 +170,7 @@ class IteradorSecuencia:
 
 ```
 
-# Capítulo 2 - `sequence_iterator.py`
+# `sequence_iterator.py`
 
 ## 1. Planteamiento del problema
 
