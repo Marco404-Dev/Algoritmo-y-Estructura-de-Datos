@@ -1,4 +1,4 @@
-```
+```python
 class CreditCard:
   """Una tarjeta de crédito de consumo."""
 
