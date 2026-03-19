@@ -24,3 +24,7 @@
 ### `yield`
 - Devuelve un valor por vez, pero la función no termina del todo.
 - Se usa para generar resultados poco a poco.
+
+
+```
+https://colab.research.google.com/drive/1NSz6_owxqmyi-lOvQ2tDFQQVvsmZfxnV#scrollTo=9xlViTg74g_d
