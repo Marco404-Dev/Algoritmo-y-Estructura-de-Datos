@@ -1,4 +1,6 @@
 ```python
+## from .credit_card import CreditCard 
+
 class CreditCard:
 
   def __init__(self, customer, bank, acnt, limit):
