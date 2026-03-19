@@ -1,56 +1,36 @@
 ```python
-class CreditCard:
-  """Una tarjeta de crédito de consumo."""
+class CreditCard:               ## Una tarjeta de crédito de consumo
 
-  def __init__(self, customer, bank, acnt, limit):
-    """Crea una nueva instancia de tarjeta de crédito.
+  def __init__(self, customer, bank, acnt, limit):    ## Crea una nueva instancia de tarjeta de crédito.
+    self._customer = customer               # nombre del cliente
+    self._bank = bank                       # nombre del banco
+    self._account = acnt                    # identificador de la cuenta
+    self._limit = limit                     #  límite de crédito
+    self._balance = 0                       #  El saldo inicial es cero.
 
-    El saldo inicial es cero.
-
-    customer  nombre del cliente
-    bank      nombre del banco
-    acnt      identificador de la cuenta
-    limit     límite de crédito
-    """
-    self._customer = customer
-    self._bank = bank
-    self._account = acnt
-    self._limit = limit
-    self._balance = 0
-
-  def get_customer(self):
-    """Devuelve el nombre del cliente."""
+  def get_customer(self):             # Devuelve el nombre del cliente
     return self._customer
 
-  def get_bank(self):
-    """Devuelve el nombre del banco."""
+  def get_bank(self):                 # Devuelve el nombre del banco
     return self._bank
 
-  def get_account(self):
-    """Devuelve el número identificador de la tarjeta."""
+  def get_account(self):          # Devuelve el número identificador de la tarjeta
     return self._account
 
-  def get_limit(self):
-    """Devuelve el límite de crédito actual."""
+  def get_limit(self):            # Devuelve el límite de crédito actual
     return self._limit
 
-  def get_balance(self):
-    """Devuelve el saldo actual."""
+  def get_balance(self):          # Devuelve el saldo actual
     return self._balance
 
-  def charge(self, price):
-    """Carga un monto a la tarjeta, si no excede el límite.
-
-    Devuelve True si se procesó el cargo; False si fue rechazado.
-    """
+  def charge(self, price):                    #  Carga un monto a la tarjeta, si no excede el límite. Devuelve True si se procesó el cargo; False si fue rechazado.
     if price + self._balance > self._limit:
       return False
     else:
       self._balance += price
       return True
 
-  def make_payment(self, amount):
-    """Procesa un pago del cliente que reduce el saldo."""
+  def make_payment(self, amount):         # Procesa un pago del cliente que reduce el saldo
     self._balance -= amount
 
 if __name__ == '__main__':
