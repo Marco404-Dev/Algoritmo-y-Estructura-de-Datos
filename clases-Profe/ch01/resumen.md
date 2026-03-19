@@ -24,13 +24,3 @@
 ### `yield`
 - Devuelve un valor por vez, pero la función no termina del todo.
 - Se usa para generar resultados poco a poco.
-
-### Ejemplo simple con `return`
-```python
-def cuadrados(lista):
-    resultado = []
-    for x in lista:
-        resultado.append(x * x)
-    return resultado
-
-print(cuadrados([1, 2, 3]))
