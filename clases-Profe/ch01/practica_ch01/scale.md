@@ -68,7 +68,7 @@ Algoritmo scale(data, factor):
 
 ---
 
-## 6. ¿Es eficiente o no?
+## 4. ¿Es eficiente o no?
 
 Sí, **es eficiente**.
 
@@ -85,7 +85,7 @@ Para este problema, su comportamiento es adecuado y natural.
 
 ---
 
-## 8. Observación importante
+## 5. Observación importante
 
 Este algoritmo **sí modifica la lista original**.
 
@@ -105,7 +105,7 @@ la variable `nums` ya queda cambiada.
 
 ---
 
-## 9. ¿Por qué usa índices y no recorrido directo?
+## 6. ¿Por qué usa índices y no recorrido directo?
 
 Se usan índices porque el algoritmo necesita **reemplazar** cada valor dentro de la lista.
 
@@ -129,7 +129,7 @@ eso no cambiaría realmente los elementos guardados en la lista, porque `val` se
 
 ---
 
-## 10. Diferencia con `sum`
+## 7. Diferencia con `sum`
 
 - `sum` es un algoritmo de **acumulación**
 - `scale` es un algoritmo de **transformación**
