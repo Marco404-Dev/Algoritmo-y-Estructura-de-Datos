@@ -96,17 +96,19 @@ Algoritmo validación de edad con excepción conjunta:
 **Código base:**
 
 ```python
-age = -1
-while age <= 0:
+edad = -1
+while edad <= 0:
   try:
-    age = int(input('Enter your age in years: '))
-    if age <= 0:
-      print('Your age must be positive')
+    edad = (int(input('ingresa tu edad: ')))
+
+    if edad < 0:
+      print('La edad debe ser positivo')
+
   except ValueError:
-    print('That is an invalid age specification')
+    print('Es una entrada invalida')
+  
   except EOFError:
-    print('There was an unexpected error reading input.')
-    raise
+    print('Se produjo un error al leer la entrada')
 ```
 
 **Algoritmo:**
