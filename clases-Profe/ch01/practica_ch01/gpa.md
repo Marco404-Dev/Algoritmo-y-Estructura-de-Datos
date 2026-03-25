@@ -23,42 +23,55 @@ El programa debe permitir:
 
 ```python
 # GPA 1
-print('Bienvenido al calculador de GPA.')
-print('Por favor, ingresa todas tus calificaciones con letras, una por línea.')
-print('Ingresa una línea en blanco para indicar el final.')
-
 points = {'A+':4.0, 'A':4.0, 'A-':3.67, 'B+':3.33, 'B':3.0, 'B-':2.67,
           'C+':2.33, 'C':2.0, 'C-':1.67, 'D+':1.33, 'D':1.0, 'F':0.0}
+puntos = 0
+cursos = 0
+done = True
 
-num_courses = 0
-total_points = 0
-done = False
+while done:
+  nota = input('')
+  if nota == '':
+    done = False
 
-while not done:
-    grade = input()
-    if grade == '':
-        done = True
-    elif grade not in points:
-        print("Calificación desconocida '{0}', será ignorada".format(grade))
-    else:
-        num_courses += 1
-        total_points += points[grade]
+  elif nota not in points:
+    print(f'la calificacion {nota} no es valido')
 
-if num_courses > 0:
-    print('Tu GPA es {0:.3f}'.format(total_points / num_courses))
+  else:
+    cursos += 1
+    puntos += points[nota]
+
+if cursos > 0:
+  print(f'el GPA es {puntos/cursos}')
+
+else:
+  print('hay cero cursos')
 
 
 # GPA 2
 def compute_gpa(grades, points={'A+':4.0, 'A':4.0, 'A-':3.67, 'B+':3.33,
                                 'B':3.0, 'B-':2.67, 'C+':2.33, 'C':2.0,
                                 'C-':1.67, 'D+':1.33, 'D':1.0, 'F':0.0}):
-    num_courses = 0
-    total_points = 0
-    for g in grades:
-        if g in points:
-            num_courses += 1
-            total_points += points[g]
-    return total_points / num_courses
+  
+  cursos = 0
+  puntos = 0
+
+  for i in grades:
+    if i not in grades:
+      print(f'la nota {i} es invalido')
+    
+    else:
+      cursos += 1
+      puntos += points[i]
+
+  if cursos == 0:
+    print('No hay cursos')
+
+  else:
+    return puntos/cursos  
+  
+compute_gpa(['A','B','C'])
+
 ```
 
 **Pseudocódigo:**
