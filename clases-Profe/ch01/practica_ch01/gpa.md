@@ -57,7 +57,7 @@ def compute_gpa(grades, points={'A+':4.0, 'A':4.0, 'A-':3.67, 'B+':3.33,
   puntos = 0
 
   for i in grades:
-    if i not in grades:
+    if i not in points:
       print(f'la nota {i} es invalido')
     
     else:
